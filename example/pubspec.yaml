@@ -9,13 +9,12 @@ environment:
   flutter: ">=3.24.1 <4.0.0"
 
 dependencies:
-  extensions_package:
-    git: https://github.com/GitHubStuff/extensions_package.git
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
-  theme_package:
-    git: https://github.com/GitHubStuff/theme_package.git
+  icodeforyou_package:
+    path: ../../icodeforyou_package
+    #git: https://github.com/GitHubStuff/theme_package.git
 
 # dart run build_runner build -d
 dev_dependencies:

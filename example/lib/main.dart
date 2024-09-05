@@ -1,8 +1,10 @@
 import 'package:_template_app_flutter/src/src.dart';
 import 'package:flutter/material.dart';
-import 'package:theme_package/theme_package.dart';
+import '../icodeforyou_package';
 
 void main() {
+  FLog().i('SampleApp');
+  FileInfo.init();
   runApp(
     ThemeApp(
       fadeDuration: const Duration(milliseconds: 500),

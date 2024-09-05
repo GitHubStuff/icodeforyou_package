@@ -8,13 +8,15 @@ environment:
   flutter: ">=3.24.1"
 
 dependencies:
+  extensions_package:
+    path: packages/extensions_package
   flutter:
     sdk: flutter
-  melos: ^6.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  melos: ^6.1.0
   very_good_analysis: ^6.0.0
 
 # Element of flutter_gen https://pub.dev/packages/flutter_gen/install
