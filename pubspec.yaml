@@ -1,0 +1,28 @@
+name: template_package
+description: "A new Flutter package project."
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.1"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^6.0.0
+
+# Element of flutter_gen https://pub.dev/packages/flutter_gen/install
+# '% dart pub global activate flutter_gen'
+# '% fluttergen'
+flutter_gen:
+  line_length: 132
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
