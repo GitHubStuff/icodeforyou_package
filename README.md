@@ -1,8 +1,8 @@
-# A FLUTTER PACKAGE TEMPLATE
+# ICODEFORYOU_PACKAGE
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Collection of my home grown widgets, utilities, and helpers.
 
 ## Getting started
 

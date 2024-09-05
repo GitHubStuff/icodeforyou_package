@@ -1,0 +1,61 @@
+name: _template_app_flutter
+description: "A new Flutter project."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 0.2.0+2
+
+environment:
+  sdk: ^3.5.1
+  flutter: ">=3.24.1 <4.0.0"
+
+dependencies:
+  extensions_package:
+    git: https://github.com/GitHubStuff/extensions_package.git
+    #path: ../../extensions_package
+  flutter:
+    sdk: flutter
+  ##app_settings: ^5.1.1 # A Flutter plugin for opening iOS and Android phone settings from an app.
+  ##cupertino_icons: ^1.0.6 # This is an asset repo for Cupertino widgets.
+  flutter_bloc: ^8.1.6
+  ##flutter_modular: ^6.3.4 # Smart project structure with dependency injection and route management
+  nosql_package:
+    git: https://github.com/GitHubStuff/nosql_package.git
+  theme_package:
+    git: https://github.com/GitHubStuff/theme_package.git
+
+# dart run build_runner build -d
+dev_dependencies:
+  build_runner: ^2.4.8 # provides a concrete way of generating files using Dart code
+  flutter_gen_runner: ^5.4.0 # The Flutter code generator for your assets, fonts, colors
+  flutter_launcher_icons: ^0.13.1 # A command-line tool that simplifies updating Flutter app's launcher icon
+  flutter_test: # Testing library for flutter, built on top of package:test.
+    sdk: flutter
+  very_good_analysis: ^6.0.0
+
+# Element of flutter_launcher_icons https://pub.dev/packages/flutter_launcher_icons
+# '% dart run flutter_launcher_icons'
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/ltmm1024x1024.png"
+  macos:
+    generate: true
+    image_path: "assets/images/ltmm1024x1024.png"
+  web:
+    generate: true
+    image_path: "assets/images/ltmm1024x1024.png"
+  windows:
+    generate: true
+    image_path: "assets/images/ltmm1024x1024.png"
+
+# Element of flutter_gen https://pub.dev/packages/flutter_gen/install
+# '% dart pub global activate flutter_gen'
+# '% fluttergen'
+flutter_gen:
+  line_length: 132
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

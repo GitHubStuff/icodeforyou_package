@@ -1,0 +1,28 @@
+# Melos - A tool for managing Dart & Flutter repositories with multiple packages
+# https://pub.dev/packages/melos
+# To install -> `dart pub global activate melos`
+
+name: icodeforyou_package
+
+packages:
+  - . # top level directory
+  - packages/** # everything in packages directory
+
+# To use -> `melos run <script>`
+scripts:
+  analyze: melos exec -- "dart analyze ."
+  get: melos exec -- "flutter pub get"
+  upgrade: melos exec -- "flutter pub upgrade"
+  upgrade_major: melos exec -- "flutter pub upgrade --major-versions"
+  build: melos exec -- "flutter pub run build_runner build --delete-conflicting-outputs"
+  format: melos exec -- "dart format ."
+  fix_preview: melos exec -- "dart fix --dry-run"
+  fix: melos exec -- "dart fix --apply"
+  lint: melos run format && melos run analyze
+
+# Other commands:
+#   bootstrap   Link local packages
+#   clean       Clean this workspace and all packages
+#   exec        Execute an arbitrary command in each package
+#   list        List local packages in various output formats
+#   --help      Show list of commands
