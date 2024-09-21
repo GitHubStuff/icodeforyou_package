@@ -10,6 +10,7 @@ class ThemeApp extends StatefulWidget {
     required this.parentScreen,
     this.darkTheme,
     this.debugShowCheckedModeBanner = true,
+    this.blocProviders = const <BlocProvider>[],
     this.darkThemeExtensions = const <ThemeExtension>[],
     this.lightThemeExtensions = const <ThemeExtension>[],
     this.fadeDuration = Duration.zero,
@@ -21,6 +22,7 @@ class ThemeApp extends StatefulWidget {
   final bool debugShowCheckedModeBanner;
   final Duration fadeDuration;
   final Duration splashDuration;
+  final List<BlocProvider> blocProviders;
   final List<ThemeExtension> darkThemeExtensions;
   final List<ThemeExtension> lightThemeExtensions;
   final ThemeData? darkTheme;
@@ -51,6 +53,7 @@ class _ThemeApp extends ObservingStatefulWidget<ThemeApp> {
           create: (_) => ThemeCubit(),
           lazy: false,
         ),
+        ...widget.blocProviders,
       ],
       child: _material(context),
     );
