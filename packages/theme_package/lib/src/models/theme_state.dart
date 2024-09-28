@@ -26,4 +26,16 @@ enum ThemeState {
         return ThemeMode.system;
     }
   }
+
+  Brightness get brightness {
+    switch (this) {
+      case ThemeState.dark:
+        return Brightness.dark;
+      case ThemeState.light:
+        return Brightness.light;
+      case ThemeState.initial:
+      case ThemeState.system:
+        return PlatformDispatcher.instance.platformBrightness;
+    }
+  }
 }

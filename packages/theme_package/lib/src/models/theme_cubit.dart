@@ -28,7 +28,7 @@ class ThemeCubit extends Cubit<ThemeState> {
     emit(ThemeState.from(name: saveThemed!));
   }
 
-  Brightness get brightness => PlatformDispatcher.instance.platformBrightness;
+  Brightness get brightness => state.brightness;
 
   void setTheme(ThemeMode mode) {
     _store.put<String>(key: _containerName, value: mode.name);
