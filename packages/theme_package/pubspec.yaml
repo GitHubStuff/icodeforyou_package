@@ -1,6 +1,6 @@
 name: theme_package
 description: "Widget package for apps to persist theme settings across launches."
-version: 0.0.1+1
+version: 0.0.2+0
 publish_to: none
 
 environment:
