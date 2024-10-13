@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 extension BuildContextExt on BuildContext {
   bool get isKeyBoardOpen => MediaQuery.of(this).viewInsets.bottom > 0;
+  bool get isTablet => MediaQuery.of(this).size.shortestSide >= 600;
   void hideKeyboard() {
     if (!FocusScope.of(this).hasPrimaryFocus) FocusScope.of(this).unfocus();
   }

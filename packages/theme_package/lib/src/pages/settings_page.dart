@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:icodeforyou_package/icodeforyou_package.dart';
+import 'package:theme_package/src/src.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({
     super.key,
-    this.leadingWidget,
+    this.dismissWidget,
     this.titleWidget,
   });
 
-  final Widget? leadingWidget;
+  final Widget? dismissWidget;
   final Widget? titleWidget;
 
   @override
   Widget build(BuildContext context) {
-    final title = titleWidget ?? const Text('My Settings');
+    final title = titleWidget ?? const Text('Theme Settings');
     return Scaffold(
       appBar: AppBar(
         title: title,
@@ -21,7 +21,7 @@ class SettingsPage extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: leadingWidget ?? const Icon(Icons.arrow_back),
+          child: dismissWidget ?? const Icon(Icons.arrow_back),
         ),
       ),
       body: _body(context),
@@ -32,8 +32,6 @@ class SettingsPage extends StatelessWidget {
     return const Center(
       child: Column(
         children: [
-          // ThemeButtons(),
-          // ThemeWidget(),
           ThemeSettingWidget(),
         ],
       ),

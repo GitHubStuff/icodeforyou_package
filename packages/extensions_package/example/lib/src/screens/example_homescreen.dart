@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_redundant_argument_values
 
-import 'package:extensions_package_example/src/src.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
@@ -19,19 +18,7 @@ class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings), // Gear icon
-            onPressed: () {
-              Navigator.push(
-                context,
-                CupertinoPageRoute<Widget>(
-                  builder: (context) => const SettingsPage(),
-                ),
-              );
-            },
-          ),
-        ],
+        actions: const [ThemeSelectionAppBarButton()],
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
