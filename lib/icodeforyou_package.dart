@@ -1,5 +1,5 @@
 /// The name of the library is the same as the package name
-library icodeforyou_package;
+library;
 
 export 'package:about_package/about_package.dart';
 export 'package:analog_clock/analog_clock.dart';

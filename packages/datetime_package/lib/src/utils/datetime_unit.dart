@@ -43,7 +43,7 @@ enum DateTimeUnit {
   /// Creates a UTC DateTime object with the specified DateTimeUnit precision.
   ///
   /// - [dateTime]: The DateTime object to be rounded (default is the current system time).
-  /// - [round]: The DateTimeUnit at which the DateTime should be rounded (default is milliseconds).
+  /// - [truncateAt]: The DateTimeUnit at which the DateTime should be rounded (default is milliseconds).
   static DateTime makeUtc(
     DateTime? dateTime, {
     DateTimeUnit truncateAt = DateTimeUnit.second,

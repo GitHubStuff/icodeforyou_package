@@ -2,15 +2,7 @@ import 'package:extensions_package/src/src.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-enum FlogLevel {
-  trace,
-  debug,
-  info,
-  warning,
-  error,
-  fatal,
-  supress,
-}
+enum FlogLevel { trace, debug, info, warning, error, fatal, supress }
 
 const _bottomLeftCorner = '└';
 const _bottomRightCorner = '┘';
@@ -38,8 +30,8 @@ class FLog {
     this.lineLength = 110,
     bool pretty = false,
     FlogLevel level = FlogLevel.trace,
-  })  : _pretty = pretty,
-        _level = level;
+  }) : _pretty = pretty,
+       _level = level;
   final String char;
   final int prefixLength;
   final int lineLength;
@@ -60,6 +52,8 @@ class FLog {
   void f(dynamic content, {String? pad, String? tag}) =>
       _log(content, FlogLevel.fatal, pad, tag);
 
+  // This setter is intentionally provided without a getter
+  // because the value is managed internally and should not be read directly.
   // ignore: avoid_setters_without_getters
   set level(FlogLevel level) => _level = level;
 
@@ -84,9 +78,10 @@ class FLog {
     final icon = tag ?? _iconMap[level] ?? '';
     final headerContent = _caller(StackTrace.current);
     _line(headerContent, pad: ' ');
-    final header = _pretty
-        ? _formatHeader(headerContent, pad ?? char)
-        : _line(headerContent, pad: '-');
+    final header =
+        _pretty
+            ? _formatHeader(headerContent, pad ?? char)
+            : _line(headerContent, pad: '-');
     _printLog(header, icon);
 
     if (content is List) {

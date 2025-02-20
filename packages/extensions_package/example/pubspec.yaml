@@ -5,8 +5,8 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 0.2.0+2
 
 environment:
-  sdk: ^3.5.3
-  flutter: ">=3.24.3 <4.0.0"
+  sdk: ^3.7.0
+  flutter: ">=3.29.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -25,7 +25,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1 # A command-line tool that simplifies updating Flutter app's launcher icon
   flutter_test: # Testing library for flutter, built on top of package:test.
     sdk: flutter
-  very_good_analysis: ^6.0.0
+  very_good_analysis: ^7.0.0
 
 # Element of flutter_launcher_icons https://pub.dev/packages/flutter_launcher_icons
 # '% dart run flutter_launcher_icons'

@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 ///  didChangeTextScaleFactor
 
 abstract class ObservingStatefulWidget<T extends StatefulWidget>
-    extends State<T> with WidgetsBindingObserver {
+    extends State<T>
+    with WidgetsBindingObserver {
   @mustCallSuper
   @override
   void initState() {
@@ -23,7 +24,7 @@ abstract class ObservingStatefulWidget<T extends StatefulWidget>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {}
 
-/*
+  /*
 Ensures Updated Data: This method guarantees that the MediaQuery.of(context)
 reflects the latest device metrics before calling the refresh method on your
 MediaQueryCubit.

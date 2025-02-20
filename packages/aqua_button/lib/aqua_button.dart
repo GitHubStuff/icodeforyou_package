@@ -41,13 +41,13 @@ class AquaButton extends StatelessWidget {
             child: Container(
               width: northPoleRadius * 2.0,
               height: northPoleRadius * 2.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: RadialGradient(
                   colors: [
-                    Colors.white.withOpacity(0.55),
+                    Color.fromRGBO(255, 255, 255, 0.55),
                     Colors.transparent,
                   ],
-                  stops: const [0.09, 0.8],
+                  stops: [0.09, 0.8],
                 ),
                 shape: BoxShape.circle,
               ),
@@ -84,12 +84,12 @@ class _TrianglePainter extends CustomPainter {
       ..lineTo(triangleBase, size.height)
       ..close();
 
-    final gradient = LinearGradient(
+    const gradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [
-        Colors.white.withOpacity(0.1),
-        Colors.white.withOpacity(0.3),
+        Color.fromRGBO(255, 255, 255, 0.1),
+        Color.fromRGBO(255, 255, 255, 0.3),
       ],
     );
 

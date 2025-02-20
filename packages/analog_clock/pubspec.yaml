@@ -4,8 +4,8 @@ version: 0.0.1
 publish_to: none
 
 environment:
-  sdk: ^3.5.3
-  flutter: ">=3.24.3"
+  sdk: ^3.7.0
+  flutter: ">=3.29.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  very_good_analysis: ^6.0.0
+  very_good_analysis: ^7.0.0
 
 # Element of flutter_gen https://pub.dev/packages/flutter_gen/install
 # '% dart pub global activate flutter_gen'

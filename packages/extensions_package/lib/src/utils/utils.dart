@@ -1,4 +1,5 @@
 export 'build_context_ext.dart';
+export 'color_ext.dart';
 export 'file_info.dart';
 export 'flog.dart';
 export 'haptic.dart';

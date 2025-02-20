@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_redundant_argument_values
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
@@ -33,7 +31,7 @@ class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
             ),
           );
         },
-        tooltip: null,
+        tooltip: 'Pushes a new screen',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
