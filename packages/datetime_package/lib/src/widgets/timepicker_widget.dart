@@ -7,10 +7,7 @@ const double _compression = 28;
 const _noon = 12;
 
 class TimePickerWidget extends StatefulWidget {
-  const TimePickerWidget(
-    this.initialDateTime, {
-    super.key,
-  });
+  const TimePickerWidget(this.initialDateTime, {super.key});
 
   final DateTime initialDateTime;
 
@@ -36,7 +33,8 @@ class _TimePickerWidget extends ObservingStatefulWidget<TimePickerWidget> {
   Widget build(BuildContext context) {
     final themeExtension =
         Theme.of(context).extension<DateTimePickerThemeExtension>();
-    final backgroundColor = themeExtension?.timeColor ??
+    final backgroundColor =
+        themeExtension?.timeColor ??
         Theme.of(context).colorScheme.primaryContainer;
     textColor =
         themeExtension?.textColor ?? Theme.of(context).colorScheme.onSurface;
@@ -88,117 +86,112 @@ class _TimePickerWidget extends ObservingStatefulWidget<TimePickerWidget> {
   }
 
   Widget _hourPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth - _compression,
-        child: ListWheelScrollView.useDelegate(
-          controller: hourController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            final hour24 = _convertTo24Hour(index + 1, state.hour >= _noon);
-            context.read<DateTimeCubit>().changeHour(hour24);
-          },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: List.generate(_noon, (index) {
-              return Center(
-                child: Text('${index + 1}', style: DateTimePicker.style)
-                    .fontWeight(
-                      state.hour ==
-                              _convertTo24Hour(index + 1, state.hour >= _noon)
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    )
-                    .textColor(textColor!),
-              );
-            }),
-          ),
-        ),
-      );
+    width: DateTimePicker.itemWidth - _compression,
+    child: ListWheelScrollView.useDelegate(
+      controller: hourController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        final hour24 = _convertTo24Hour(index + 1, state.hour >= _noon);
+        context.read<DateTimeCubit>().changeHour(hour24);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children: List.generate(_noon, (index) {
+          return Center(
+            child: Text('${index + 1}', style: DateTimePicker.style)
+                .fontWeight(
+                  state.hour == _convertTo24Hour(index + 1, state.hour >= _noon)
+                      ? FontWeight.bold
+                      : FontWeight.normal,
+                )
+                .textColor(textColor!),
+          );
+        }),
+      ),
+    ),
+  );
 
   Widget _minutePicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth - _compression,
-        child: ListWheelScrollView.useDelegate(
-          controller: minuteController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            context.read<DateTimeCubit>().changeMinute(index);
-          },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: List.generate(60, (index) {
-              return Center(
-                child: Text(
+    width: DateTimePicker.itemWidth - _compression,
+    child: ListWheelScrollView.useDelegate(
+      controller: minuteController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        context.read<DateTimeCubit>().changeMinute(index);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children: List.generate(60, (index) {
+          return Center(
+            child: Text(
                   index.toString().padLeft(2, '0'),
                   style: DateTimePicker.style,
                 )
-                    .fontWeight(
-                      state.minute == index
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    )
-                    .textColor(textColor!),
-              );
-            }),
-          ),
-        ),
-      );
+                .fontWeight(
+                  state.minute == index ? FontWeight.bold : FontWeight.normal,
+                )
+                .textColor(textColor!),
+          );
+        }),
+      ),
+    ),
+  );
 
   Widget _secondPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth - _compression,
-        child: ListWheelScrollView.useDelegate(
-          controller: secondController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            context.read<DateTimeCubit>().changeSecond(index);
-          },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: List.generate(60, (index) {
-              return Center(
-                child: Text(
+    width: DateTimePicker.itemWidth - _compression,
+    child: ListWheelScrollView.useDelegate(
+      controller: secondController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        context.read<DateTimeCubit>().changeSecond(index);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children: List.generate(60, (index) {
+          return Center(
+            child: Text(
                   index.toString().padLeft(2, '0'),
                   style: DateTimePicker.style,
                 )
-                    .fontWeight(
-                      state.second == index
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    )
-                    .textColor(textColor!),
-              );
-            }),
-          ),
-        ),
-      );
+                .fontWeight(
+                  state.second == index ? FontWeight.bold : FontWeight.normal,
+                )
+                .textColor(textColor!),
+          );
+        }),
+      ),
+    ),
+  );
 
   Widget _meridianPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth - _compression,
-        child: ListWheelScrollView(
-          controller: meridianController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            final isPm = index == 1;
-            final hour = _convertTo24Hour(state.hour % _noon, isPm);
-            context.read<DateTimeCubit>().changeHour(hour);
-          },
-          physics: const FixedExtentScrollPhysics(),
-          children: [
-            Center(
-              child: const Text('AM', style: DateTimePicker.style)
-                  .fontWeight(
-                    state.hour < _noon ? FontWeight.bold : FontWeight.normal,
-                  )
-                  .textColor(textColor!),
-            ),
-            Center(
-              child: const Text('PM', style: DateTimePicker.style)
-                  .fontWeight(
-                    state.hour >= _noon ? FontWeight.bold : FontWeight.normal,
-                  )
-                  .textColor(textColor!),
-            ),
-          ],
+    width: DateTimePicker.itemWidth - _compression,
+    child: ListWheelScrollView(
+      controller: meridianController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        final isPm = index == 1;
+        final hour = _convertTo24Hour(state.hour % _noon, isPm);
+        context.read<DateTimeCubit>().changeHour(hour);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      children: [
+        Center(
+          child: const Text('AM', style: DateTimePicker.style)
+              .fontWeight(
+                state.hour < _noon ? FontWeight.bold : FontWeight.normal,
+              )
+              .textColor(textColor!),
         ),
-      );
+        Center(
+          child: const Text('PM', style: DateTimePicker.style)
+              .fontWeight(
+                state.hour >= _noon ? FontWeight.bold : FontWeight.normal,
+              )
+              .textColor(textColor!),
+        ),
+      ],
+    ),
+  );
 
   int _convertTo24Hour(int hour, bool isPm) {
     if (isPm && hour != _noon) return hour + _noon;
@@ -207,10 +200,10 @@ class _TimePickerWidget extends ObservingStatefulWidget<TimePickerWidget> {
   }
 
   Widget _colon() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 2),
-        child: const Text(
-          ':',
-          style: DateTimePicker.style,
-        ).fontWeight(FontWeight.bold),
-      );
+    padding: const EdgeInsets.symmetric(horizontal: 2),
+    child: const Text(
+      ':',
+      style: DateTimePicker.style,
+    ).fontWeight(FontWeight.bold),
+  );
 }

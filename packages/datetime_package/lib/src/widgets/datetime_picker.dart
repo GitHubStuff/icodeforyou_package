@@ -52,9 +52,13 @@ class DateTimePicker extends StatelessWidget {
               transitionBuilder: (Widget child, Animation<double> animation) {
                 return FadeTransition(opacity: animation, child: child);
               },
-              child: state.pickerType == PickerType.date
-                  ? DatePickerWidget(state.dateTime, key: const ValueKey(1))
-                  : TimePickerWidget(state.dateTime, key: const ValueKey(2)),
+              child:
+                  state.pickerType == PickerType.date
+                      ? DatePickerWidget(state.dateTime, key: const ValueKey(1))
+                      : TimePickerWidget(
+                        state.dateTime,
+                        key: const ValueKey(2),
+                      ),
             );
           },
         ),

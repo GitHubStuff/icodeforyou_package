@@ -1,3 +1,4 @@
+// Improves readability of examples
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:extensions_package/extensions_package.dart';
@@ -34,8 +35,6 @@ class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return const Center(
-      child: Text('About'),
-    );
+    return const Center(child: Text('About'));
   }
 }

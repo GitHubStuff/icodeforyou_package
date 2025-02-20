@@ -1,3 +1,4 @@
+// Improves readability of examples
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:extensions_package/extensions_package.dart';

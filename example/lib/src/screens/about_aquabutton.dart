@@ -8,10 +8,7 @@ Widget _aboutAquaButton() {
       AboutContent(
         title: Text('Aqua Button'),
         demo: Center(
-          child: AquaButton(
-            materialColor: Colors.amber,
-            radius: 48,
-          ),
+          child: AquaButton(materialColor: Colors.amber, radius: 48),
         ),
         size: Size(300, 200),
       ),

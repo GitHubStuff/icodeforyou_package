@@ -11,14 +11,15 @@ class ThemeSettingWidget extends StatelessWidget {
     Widget? darkThemeWidget,
     Widget? systemThemeWidget,
     Widget? lightThemeWidget,
-  })  : titleWidget = titleWidget ??
-            const Text(
-              'Theme',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-        darkThemeWidget = darkThemeWidget ?? const Text('Dark'),
-        systemThemeWidget = systemThemeWidget ?? const Text('System'),
-        lightThemeWidget = lightThemeWidget ?? const Text('Light');
+  }) : titleWidget =
+           titleWidget ??
+           const Text(
+             'Theme',
+             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+           ),
+       darkThemeWidget = darkThemeWidget ?? const Text('Dark'),
+       systemThemeWidget = systemThemeWidget ?? const Text('System'),
+       lightThemeWidget = lightThemeWidget ?? const Text('Light');
 
   final Widget titleWidget;
   final Widget darkThemeWidget;

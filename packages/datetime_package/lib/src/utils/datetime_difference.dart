@@ -1,3 +1,4 @@
+// Improve readability
 // ignore_for_file: omit_local_variable_types
 
 import 'package:datetime_package/src/src.dart';
@@ -15,10 +16,10 @@ class DateTimeDifference {
     required DateTime endEvent,
     DateTimeUnit firstDateTimeUnit = DateTimeUnit.year,
     DateTimeUnit precision = DateTimeUnit.second,
-  })  : finishDateTime = endEvent,
-        startDateTime = startEvent,
-        fieldSet = firstDateTimeUnit.sublist(),
-        direction = DateTimeOrdering.direction(startEvent, endEvent) {
+  }) : finishDateTime = endEvent,
+       startDateTime = startEvent,
+       fieldSet = firstDateTimeUnit.sublist(),
+       direction = DateTimeOrdering.direction(startEvent, endEvent) {
     if (direction == DateTimeOrdering.now) {
       _setItems(); // Set all items to null.
       return;
@@ -85,7 +86,7 @@ class DateTimeDifference {
       DateTimeUnit.year: () {
         timeDifferences[DateTimeUnit.month.name] =
             (timeDifferences[DateTimeUnit.month.name] ?? 0) +
-                timeDifferences[DateTimeUnit.year.name]!.asMonths();
+            timeDifferences[DateTimeUnit.year.name]!.asMonths();
         timeDifferences[DateTimeUnit.year.name] = 0;
       },
       DateTimeUnit.month: () {
@@ -238,10 +239,10 @@ class DateTimeDifferenceOriginal {
     required DateTime startEvent,
     required DateTime endEvent,
     DateTimeUnit firstDateTimeUnit = DateTimeUnit.year,
-  })  : finishDateTime = endEvent,
-        startDateTime = startEvent,
-        fieldSet = firstDateTimeUnit.sublist(),
-        direction = DateTimeOrdering.direction(startEvent, endEvent) {
+  }) : finishDateTime = endEvent,
+       startDateTime = startEvent,
+       fieldSet = firstDateTimeUnit.sublist(),
+       direction = DateTimeOrdering.direction(startEvent, endEvent) {
     if (direction == DateTimeOrdering.now) {
       _setItems(); // Set all items to null.
       return;
@@ -262,7 +263,7 @@ class DateTimeDifferenceOriginal {
     if (!fieldSet.contains(DateTimeUnit.year)) {
       timeDifferences[DateTimeUnit.month.name] =
           (timeDifferences[DateTimeUnit.month.name] ?? 0) +
-              timeDifferences[DateTimeUnit.year.name]!.asMonths();
+          timeDifferences[DateTimeUnit.year.name]!.asMonths();
       timeDifferences[DateTimeUnit.year.name] = 0;
     }
     if (!fieldSet.contains(DateTimeUnit.month)) {
@@ -342,35 +343,35 @@ class DateTimeDifferenceOriginal {
           (timeDifferences[DateTimeUnit.msec.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.usec.name] =
           (timeDifferences[DateTimeUnit.usec.name] ?? 0) +
-              DateTimeUnit.kUsecPerMsec;
+          DateTimeUnit.kUsecPerMsec;
     }
     if (timeDifferences[DateTimeUnit.msec.name]! < 0) {
       timeDifferences[DateTimeUnit.second.name] =
           (timeDifferences[DateTimeUnit.second.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.msec.name] =
           (timeDifferences[DateTimeUnit.msec.name] ?? 0) +
-              DateTimeUnit.kMsecPerSecond;
+          DateTimeUnit.kMsecPerSecond;
     }
     if (timeDifferences[DateTimeUnit.second.name]! < 0) {
       timeDifferences[DateTimeUnit.minute.name] =
           (timeDifferences[DateTimeUnit.minute.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.second.name] =
           (timeDifferences[DateTimeUnit.second.name] ?? 0) +
-              DateTimeUnit.kSecondsPerMinute;
+          DateTimeUnit.kSecondsPerMinute;
     }
     if (timeDifferences[DateTimeUnit.minute.name]! < 0) {
       timeDifferences[DateTimeUnit.hour.name] =
           (timeDifferences[DateTimeUnit.hour.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.minute.name] =
           (timeDifferences[DateTimeUnit.minute.name] ?? 0) +
-              DateTimeUnit.kMinutesPerHour;
+          DateTimeUnit.kMinutesPerHour;
     }
     if (timeDifferences[DateTimeUnit.hour.name]! < 0) {
       timeDifferences[DateTimeUnit.day.name] =
           (timeDifferences[DateTimeUnit.day.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.hour.name] =
           (timeDifferences[DateTimeUnit.hour.name] ?? 0) +
-              DateTimeUnit.kHoursPerDay;
+          DateTimeUnit.kHoursPerDay;
     }
     if (timeDifferences[DateTimeUnit.day.name]! < 0) {
       timeDifferences[DateTimeUnit.month.name] =
@@ -385,7 +386,7 @@ class DateTimeDifferenceOriginal {
           (timeDifferences[DateTimeUnit.year.name] ?? 0) - 1;
       timeDifferences[DateTimeUnit.month.name] =
           (timeDifferences[DateTimeUnit.month.name] ?? 0) +
-              DateTimeUnit.kMonthsPerYear;
+          DateTimeUnit.kMonthsPerYear;
     }
   }
 

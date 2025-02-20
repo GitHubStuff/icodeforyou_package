@@ -12,12 +12,8 @@ void main() {
 
       /// ThemeData? darkTheme,
       /// ThemeData? lightTheme,
-      darkThemeExtensions: [
-        DateTimePickerThemeExtensionFactory.dark(),
-      ],
-      lightThemeExtensions: [
-        DateTimePickerThemeExtensionFactory.light(),
-      ],
+      darkThemeExtensions: [DateTimePickerThemeExtensionFactory.dark()],
+      lightThemeExtensions: [DateTimePickerThemeExtensionFactory.light()],
     ),
   );
 }

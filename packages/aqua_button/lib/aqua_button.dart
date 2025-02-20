@@ -1,5 +1,4 @@
-/// Button based on the old-style Aqua Button from macOS-X
-library aqua_button;
+// Button based on the old-style Aqua Button from macOS-X
 
 import 'package:flutter/material.dart';
 
@@ -78,11 +77,12 @@ class _TrianglePainter extends CustomPainter {
     final triangleHeight = size.height / 2.5;
     final triangleBase = size.width * 1.0;
 
-    final path = Path()
-      ..moveTo(size.width / 2.0, size.height - triangleHeight)
-      ..lineTo(0, size.height)
-      ..lineTo(triangleBase, size.height)
-      ..close();
+    final path =
+        Path()
+          ..moveTo(size.width / 2.0, size.height - triangleHeight)
+          ..lineTo(0, size.height)
+          ..lineTo(triangleBase, size.height)
+          ..close();
 
     const gradient = LinearGradient(
       begin: Alignment.topCenter,
@@ -93,13 +93,14 @@ class _TrianglePainter extends CustomPainter {
       ],
     );
 
-    final paint = Paint()
-      ..shader = gradient.createShader(
-        Rect.fromPoints(
-          Offset(0, size.height - triangleHeight),
-          Offset(triangleBase, size.height),
-        ),
-      );
+    final paint =
+        Paint()
+          ..shader = gradient.createShader(
+            Rect.fromPoints(
+              Offset(0, size.height - triangleHeight),
+              Offset(triangleBase, size.height),
+            ),
+          );
 
     canvas.drawPath(path, paint);
   }

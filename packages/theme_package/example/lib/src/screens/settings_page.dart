@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theme_package/theme_package.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({
-    super.key,
-    this.leadingWidget,
-    this.titleWidget,
-  });
+  const SettingsPage({super.key, this.leadingWidget, this.titleWidget});
 
   final Widget? leadingWidget;
   final Widget? titleWidget;

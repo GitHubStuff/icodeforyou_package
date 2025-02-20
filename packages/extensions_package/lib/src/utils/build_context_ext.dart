@@ -22,9 +22,10 @@ class Responsive {
     assert(minWidth >= 0, 'Invalid minWidth: $minWidth');
     assert(maxWidth >= 0, 'Invalid maxWidth: $maxWidth');
     final context = Global.context;
-    final width = (overrideWidth == null)
-        ? MediaQuery.of(context).size.width
-        : overrideWidth;
+    final width =
+        (overrideWidth == null)
+            ? MediaQuery.of(context).size.width
+            : overrideWidth;
     return max(minWidth, min(maxWidth, width * w));
   }
 
@@ -38,9 +39,10 @@ class Responsive {
     assert(minHeight >= 0, 'Invalid min: $minHeight');
     assert(maxHeight >= 0, 'Invalid max: $maxHeight');
     final context = Global.context;
-    final height = (overrideHeight == null)
-        ? MediaQuery.of(context).size.height
-        : overrideHeight;
+    final height =
+        (overrideHeight == null)
+            ? MediaQuery.of(context).size.height
+            : overrideHeight;
     return max(minHeight, min(maxHeight, height * h));
   }
 }

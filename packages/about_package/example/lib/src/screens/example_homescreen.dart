@@ -1,3 +1,4 @@
+// For readability in the demo
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:flutter/material.dart';

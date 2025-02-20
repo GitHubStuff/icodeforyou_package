@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theme_package/src/src.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({
-    super.key,
-    this.dismissWidget,
-    this.titleWidget,
-  });
+  const SettingsPage({super.key, this.dismissWidget, this.titleWidget});
 
   final Widget? dismissWidget;
   final Widget? titleWidget;
@@ -29,12 +25,6 @@ class SettingsPage extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    return const Center(
-      child: Column(
-        children: [
-          ThemeSettingWidget(),
-        ],
-      ),
-    );
+    return const Center(child: Column(children: [ThemeSettingWidget()]));
   }
 }

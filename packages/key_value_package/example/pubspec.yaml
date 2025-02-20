@@ -13,7 +13,7 @@ dependencies:
     git: https://github.com/GitHubStuff/extensions_package.git
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6
+  flutter_bloc: ^9.0.0
   theme_package:
     git: https://github.com/GitHubStuff/theme_package.git
 

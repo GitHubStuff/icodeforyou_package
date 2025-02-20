@@ -49,10 +49,7 @@ class _ThemeApp extends ObservingStatefulWidget<ThemeApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ThemeCubit>(
-          create: (_) => ThemeCubit(),
-          lazy: false,
-        ),
+        BlocProvider<ThemeCubit>(create: (_) => ThemeCubit(), lazy: false),
         ...widget.blocProviders,
       ],
       child: _material(context),
@@ -68,16 +65,12 @@ class _ThemeApp extends ObservingStatefulWidget<ThemeApp> {
             return ColoredBox(color: Colors.black, child: child);
           },
           darkTheme: (widget.darkTheme ?? ThemeData.dark()).copyWith(
-            extensions: [
-              ...widget.darkThemeExtensions,
-            ],
+            extensions: [...widget.darkThemeExtensions],
           ),
           debugShowCheckedModeBanner: widget.debugShowCheckedModeBanner,
           home: _showSplashThenParent(),
           theme: (widget.lightTheme ?? ThemeData.light()).copyWith(
-            extensions: [
-              ...widget.lightThemeExtensions,
-            ],
+            extensions: [...widget.lightThemeExtensions],
           ),
           themeMode: state.mode,
         );
@@ -114,10 +107,7 @@ class _ThemeApp extends ObservingStatefulWidget<ThemeApp> {
       PageRouteBuilder<Object>(
         pageBuilder: (context, animation, secondaryAnimation) => page,
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return FadeTransition(
-            opacity: animation,
-            child: child,
-          );
+          return FadeTransition(opacity: animation, child: child);
         },
         transitionDuration: duration,
       ),

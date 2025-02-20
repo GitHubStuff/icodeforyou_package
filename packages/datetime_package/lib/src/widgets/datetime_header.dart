@@ -1,3 +1,4 @@
+// Improve readability
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:auto_size_text/auto_size_text.dart';
@@ -28,10 +29,12 @@ class DateTimeHeader extends StatelessWidget {
     return BlocBuilder<DateTimeCubit, DateTimeState>(
       builder: (context, state) {
         final (backgroundColor, textColor) = _color(context);
-        final formattedDate =
-            DateFormat(dateFormat).format(state.dateTime.toLocal());
-        final formattedTime =
-            DateFormat(timeFormat).format(state.dateTime.toLocal());
+        final formattedDate = DateFormat(
+          dateFormat,
+        ).format(state.dateTime.toLocal());
+        final formattedTime = DateFormat(
+          timeFormat,
+        ).format(state.dateTime.toLocal());
         return SizedBox(
           width: DateTimePicker.pickerSize.width, // Set fixed width
           height: 70, // Set fixed height
@@ -95,16 +98,20 @@ class DateTimeHeader extends StatelessWidget {
     final pickerType = context.read<DateTimeCubit>().state.pickerType;
     switch (pickerType) {
       case PickerType.date:
-        final backgroundColor = themeExtension?.dateColor ??
+        final backgroundColor =
+            themeExtension?.dateColor ??
             Theme.of(context).colorScheme.primaryContainer;
-        final textColor = themeExtension?.textColor ??
+        final textColor =
+            themeExtension?.textColor ??
             Theme.of(context).colorScheme.onPrimary;
         return (backgroundColor, textColor);
 
       case PickerType.time:
-        final backgroundColor = themeExtension?.timeColor ??
+        final backgroundColor =
+            themeExtension?.timeColor ??
             Theme.of(context).colorScheme.secondaryContainer;
-        final textColor = themeExtension?.textColor ??
+        final textColor =
+            themeExtension?.textColor ??
             Theme.of(context).colorScheme.onSecondary;
         return (backgroundColor, textColor);
     }

@@ -28,19 +28,20 @@ Widget _buildMarquee(BuildContext context, {required GlobalKey marqueeKey}) {
                 ElevatedButton(
                   onPressed: () {
                     context.read<MarqueeCubit>().startMarquee(
-                          marqueeKey,
-                          direction: MarqueeDirection.ltr,
-                        );
+                      marqueeKey,
+                      direction: MarqueeDirection.ltr,
+                    );
                   },
                   child: const Text('L-T-R'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     context.read<MarqueeCubit>().startMarquee(
-                          marqueeKey,
-                          // ignore: avoid_redundant_argument_values
-                          direction: MarqueeDirection.rtl,
-                        );
+                      marqueeKey,
+                      // For readability
+                      // ignore: avoid_redundant_argument_values
+                      direction: MarqueeDirection.rtl,
+                    );
                   },
                   child: const Text('R-T-L'),
                 ),

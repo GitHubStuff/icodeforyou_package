@@ -7,10 +7,7 @@ import 'package:intl/intl.dart';
 const _baseYear = 1900;
 
 class DatePickerWidget extends StatefulWidget {
-  const DatePickerWidget(
-    this.initialDateTime, {
-    super.key,
-  });
+  const DatePickerWidget(this.initialDateTime, {super.key});
 
   final DateTime initialDateTime;
 
@@ -40,7 +37,8 @@ class _DatePickerWidget extends ObservingStatefulWidget<DatePickerWidget> {
   Widget build(BuildContext context) {
     final themeExtension =
         Theme.of(context).extension<DateTimePickerThemeExtension>();
-    final backgroundColor = themeExtension?.dateColor ??
+    final backgroundColor =
+        themeExtension?.dateColor ??
         Theme.of(context).colorScheme.primaryContainer;
     textColor =
         themeExtension?.textColor ?? Theme.of(context).colorScheme.onSurface;
@@ -87,84 +85,85 @@ class _DatePickerWidget extends ObservingStatefulWidget<DatePickerWidget> {
   }
 
   Widget _monthPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth, // Adjusted to give uniform width
-        child: ListWheelScrollView.useDelegate(
-          controller: monthController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            context
-                .read<DateTimeCubit>()
-                .changeMonth(index + 1); // Months are 1-indexed
-          },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: _months.asMap().entries.map(
-              (entry) {
-                return Center(
-                  child: Text(entry.value, style: DateTimePicker.style)
-                      .fontWeight(
-                        state.month == entry.key + 1
-                            ? FontWeight.bold
-                            : FontWeight.normal,
-                      )
-                      .textColor(textColor!),
-                );
-              },
-            ).toList(),
-          ),
-        ),
-      );
+    width: DateTimePicker.itemWidth, // Adjusted to give uniform width
+    child: ListWheelScrollView.useDelegate(
+      controller: monthController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        context.read<DateTimeCubit>().changeMonth(
+          index + 1,
+        ); // Months are 1-indexed
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children:
+            _months.asMap().entries.map((entry) {
+              return Center(
+                child: Text(entry.value, style: DateTimePicker.style)
+                    .fontWeight(
+                      state.month == entry.key + 1
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                    )
+                    .textColor(textColor!),
+              );
+            }).toList(),
+      ),
+    ),
+  );
 
   Widget _dayPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth, // Same width as month picker
-        child: ListWheelScrollView.useDelegate(
-          controller: dayController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            context.read<DateTimeCubit>().changeDay(index + 1);
+    width: DateTimePicker.itemWidth, // Same width as month picker
+    child: ListWheelScrollView.useDelegate(
+      controller: dayController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        context.read<DateTimeCubit>().changeDay(index + 1);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children: List.generate(
+          DateTimeExt.daysIn(month: state.month, year: state.year),
+          (index) {
+            return Center(
+              child: Text('${index + 1}', style: DateTimePicker.style)
+                  .fontWeight(
+                    state.day == index + 1
+                        ? FontWeight.bold
+                        : FontWeight.normal,
+                  )
+                  .textColor(textColor!),
+            );
           },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: List.generate(
-                DateTimeExt.daysIn(month: state.month, year: state.year),
-                (index) {
-              return Center(
-                child: Text('${index + 1}', style: DateTimePicker.style)
-                    .fontWeight(
-                      state.day == index + 1
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    )
-                    .textColor(textColor!),
-              );
-            }),
-          ),
         ),
-      );
+      ),
+    ),
+  );
 
   Widget _yearPicker(DateTime state) => SizedBox(
-        width: DateTimePicker.itemWidth, // Same width as month picker
-        child: ListWheelScrollView.useDelegate(
-          controller: yearController,
-          itemExtent: DateTimePicker.itemExtent,
-          onSelectedItemChanged: (index) {
-            context.read<DateTimeCubit>().changeYear(_baseYear + index);
-          },
-          physics: const FixedExtentScrollPhysics(),
-          childDelegate: ListWheelChildLoopingListDelegate(
-            children: List.generate(500, (index) {
-              return Center(
-                // ignore: require_trailing_commas
-                child: Text('${_baseYear + index}', style: DateTimePicker.style)
-                    .fontWeight(
-                      state.year == _baseYear + index
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    )
-                    .textColor(textColor!),
-              );
-            }),
-          ),
-        ),
-      );
+    width: DateTimePicker.itemWidth, // Same width as month picker
+    child: ListWheelScrollView.useDelegate(
+      controller: yearController,
+      itemExtent: DateTimePicker.itemExtent,
+      onSelectedItemChanged: (index) {
+        context.read<DateTimeCubit>().changeYear(_baseYear + index);
+      },
+      physics: const FixedExtentScrollPhysics(),
+      childDelegate: ListWheelChildLoopingListDelegate(
+        children: List.generate(500, (index) {
+          return Center(
+            // Improve readability
+            // ignore: require_trailing_commas
+            child: Text('${_baseYear + index}', style: DateTimePicker.style)
+                .fontWeight(
+                  state.year == _baseYear + index
+                      ? FontWeight.bold
+                      : FontWeight.normal,
+                )
+                .textColor(textColor!),
+          );
+        }),
+      ),
+    ),
+  );
 }

@@ -15,12 +15,7 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: titleWidget,
-      ),
-      body: _body(context),
-    );
+    return Scaffold(appBar: AppBar(title: titleWidget), body: _body(context));
   }
 
   Widget _body(BuildContext context) {
@@ -33,9 +28,7 @@ class AboutPage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
-                side: BorderSide(
-                  color: Theme.of(context).dividerColor,
-                ),
+                side: BorderSide(color: Theme.of(context).dividerColor),
               ),
             ),
             onPressed: () {

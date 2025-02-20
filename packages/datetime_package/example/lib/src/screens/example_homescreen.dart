@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_redundant_argument_values
-
 import 'package:flutter/material.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
 
@@ -24,7 +22,7 @@ class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
       body: _body(context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        tooltip: null,
+        tooltip: '?Press me?',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );

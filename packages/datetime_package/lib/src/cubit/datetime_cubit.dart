@@ -1,3 +1,4 @@
+// Improve readability
 // ignore_for_file: omit_local_variable_types
 
 import 'package:equatable/equatable.dart';
@@ -7,21 +8,23 @@ part 'datetime_state.dart';
 
 class DateTimeCubit extends Cubit<DateTimeState> {
   DateTimeCubit({DateTime? starting})
-      : super(
-          DateTimeState(
-            dateTime: starting ?? DateTime.now(),
-            refresh: false,
-            pickerType: PickerType.date,
-          ),
-        );
+    : super(
+        DateTimeState(
+          dateTime: starting ?? DateTime.now(),
+          refresh: false,
+          pickerType: PickerType.date,
+        ),
+      );
 
   void changeYear(int year) {
     DateTime newDateTime = state.dateTime.copyWith(year: year);
     bool refresh = false;
     if (newDateTime.month != state.dateTime.month) {
       final lastDay = _daysInMonth(state.dateTime.month, state.dateTime.year);
-      newDateTime =
-          state.dateTime.copyWith(month: state.dateTime.month, day: lastDay);
+      newDateTime = state.dateTime.copyWith(
+        month: state.dateTime.month,
+        day: lastDay,
+      );
       refresh = true;
     }
     emit(
@@ -88,8 +91,9 @@ class DateTimeCubit extends Cubit<DateTimeState> {
 
   void changeMeridian(int index) {
     final newState = DateTimeState(
-      dateTime:
-          state.dateTime.copyWith(hour: state.dateTime.hour + (index * 12)),
+      dateTime: state.dateTime.copyWith(
+        hour: state.dateTime.hour + (index * 12),
+      ),
       refresh: false,
       pickerType: state.pickerType,
     );
@@ -106,7 +110,8 @@ class DateTimeCubit extends Cubit<DateTimeState> {
     );
   }
 
-  int _daysInMonth(int month, int year) => [
+  int _daysInMonth(int month, int year) =>
+      [
         31,
         if (_isLeap(year)) 29 else 28,
         31,

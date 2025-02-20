@@ -1,4 +1,3 @@
-/// The core library of the package.
-library about_package;
+// The core library of the package.
 
 export 'src/package.dart';

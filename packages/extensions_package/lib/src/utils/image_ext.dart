@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 
 extension ImageExtension on Image {
   Widget rotate({required double percentage}) => RotationTransition(
-        turns: AlwaysStoppedAnimation(percentage),
-        child: this,
-      );
+    turns: AlwaysStoppedAnimation(percentage),
+    child: this,
+  );
 
   /// Attempts to save an image a Uint8List for on-device use or export.
   Future<Uint8List?> asBytes() async {
@@ -25,8 +25,9 @@ class _WidgetPngController {
   Future<Uint8List?> capture() async {
     try {
       /// boundary widget by GlobalKey
-      final boundary = containerKey.currentContext?.findRenderObject()
-          as RenderRepaintBoundary?;
+      final boundary =
+          containerKey.currentContext?.findRenderObject()
+              as RenderRepaintBoundary?;
 
       /// convert boundary to image
       final image = await boundary!.toImage(pixelRatio: 6);
@@ -42,10 +43,7 @@ class _WidgetPngController {
 }
 
 class _WidgetPngConverter extends StatelessWidget {
-  const _WidgetPngConverter({
-    required this.child,
-    required this.controller,
-  });
+  const _WidgetPngConverter({required this.child, required this.controller});
 
   final Widget? child;
   final _WidgetPngController controller;
@@ -53,9 +51,6 @@ class _WidgetPngConverter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// to capture widget to image by GlobalKey in RepaintBoundary
-    return RepaintBoundary(
-      key: controller.containerKey,
-      child: child,
-    );
+    return RepaintBoundary(key: controller.containerKey, child: child);
   }
 }

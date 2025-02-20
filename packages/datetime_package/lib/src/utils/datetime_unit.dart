@@ -35,10 +35,9 @@ enum DateTimeUnit {
   static DateTime makeLocal(
     DateTime? dateTime, {
     DateTimeUnit truncateAt = DateTimeUnit.second,
-  }) =>
-      (dateTime ?? DateTime.now())
-          .toLocal()
-          .truncate(atDateTimeUnit: truncateAt);
+  }) => (dateTime ?? DateTime.now()).toLocal().truncate(
+    atDateTimeUnit: truncateAt,
+  );
 
   /// Creates a UTC DateTime object with the specified DateTimeUnit precision.
   ///

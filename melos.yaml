@@ -14,14 +14,17 @@ ignore:
 # To use -> `melos run <script>`
 scripts:
   analyze: melos exec -- "dart analyze ."
-  get: melos exec -- "flutter pub get"
-  upgrade: melos exec -- "flutter pub upgrade"
-  upgrade_major: melos exec -- "flutter pub upgrade --major-versions"
   build: melos exec -- "flutter pub run build_runner build --delete-conflicting-outputs"
-  format: melos exec -- "dart format ."
   fix_preview: melos exec -- "dart fix --dry-run"
   fix: melos exec -- "dart fix --apply"
+  format: melos exec -- "dart format ."
+  get: melos exec -- "flutter pub get"
   lint: melos run format && melos run analyze
+  test:
+    run: flutter test
+    description: Run all tests
+  upgrade_major: melos exec -- "flutter pub upgrade --major-versions"
+  upgrade: melos exec -- "flutter pub upgrade"
 
 # Other commands:
 #   bootstrap   Link local packages

@@ -14,20 +14,8 @@ class OptionButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildButton(
-          context,
-          'Date',
-          PickerType.date,
-          halfWidth,
-          buttonHeight,
-        ),
-        _buildButton(
-          context,
-          'Time',
-          PickerType.time,
-          halfWidth,
-          buttonHeight,
-        ),
+        _buildButton(context, 'Date', PickerType.date, halfWidth, buttonHeight),
+        _buildButton(context, 'Time', PickerType.time, halfWidth, buttonHeight),
       ],
     );
   }
@@ -45,14 +33,16 @@ class OptionButtons extends StatelessWidget {
     final theme = Theme.of(context);
     final isDarkMode = theme.brightness == Brightness.dark;
 
-    final bgColor = type == PickerType.date
-        ? themeExtension?.dateColor ??
-            (isDarkMode ? Colors.grey[800] : Colors.blue[300])
-        : themeExtension?.timeColor ??
-            (isDarkMode ? Colors.purple[800] : Colors.purple[300]);
+    final bgColor =
+        type == PickerType.date
+            ? themeExtension?.dateColor ??
+                (isDarkMode ? Colors.grey[800] : Colors.blue[300])
+            : themeExtension?.timeColor ??
+                (isDarkMode ? Colors.purple[800] : Colors.purple[300]);
 
     final textColor = themeExtension?.textColor ?? theme.colorScheme.onSurface;
-    final splashColor = themeExtension?.splashColor ??
+    final splashColor =
+        themeExtension?.splashColor ??
         (isDarkMode ? Colors.green[900] : Colors.green[200]);
 
     return SizedBox(
@@ -66,10 +56,7 @@ class OptionButtons extends StatelessWidget {
           child: Center(
             child: AutoSizeText(
               label,
-              style: TextStyle(
-                color: textColor,
-                fontSize: 30,
-              ),
+              style: TextStyle(color: textColor, fontSize: 30),
             ),
           ),
         ),

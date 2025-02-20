@@ -21,8 +21,9 @@ class AboutCard extends StatelessWidget {
         Navigator.push(
           context,
           CupertinoPageRoute<Widget>(
-            builder: (context) =>
-                AboutPage(titleWidget: title, demoWidgets: demoWidgets),
+            builder:
+                (context) =>
+                    AboutPage(titleWidget: title, demoWidgets: demoWidgets),
           ),
         );
       },

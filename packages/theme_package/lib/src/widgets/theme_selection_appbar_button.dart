@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
 
 class ThemeSelectionAppBarButton extends StatelessWidget {
-  const ThemeSelectionAppBarButton({
-    this.iconData,
-    super.key,
-  });
+  const ThemeSelectionAppBarButton({this.iconData, super.key});
 
   final IconData? iconData;
 
@@ -44,9 +41,7 @@ class ThemeSelectionAppBarButton extends StatelessWidget {
     } else {
       Navigator.push(
         context,
-        CupertinoPageRoute<Widget>(
-          builder: (context) => const SettingsPage(),
-        ),
+        CupertinoPageRoute<Widget>(builder: (context) => const SettingsPage()),
       );
     }
   }

@@ -34,9 +34,6 @@ class _PositionAndSizeWidgetState extends State<PositionAndSizeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      key: key,
-      child: widget.child,
-    );
+    return Container(key: key, child: widget.child);
   }
 }

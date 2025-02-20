@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_redundant_argument_values
-
 import 'dart:async';
 import 'dart:math';
 
@@ -10,7 +8,7 @@ part 'clock_painter.dart';
 
 const double _defaultRadius = 50;
 const double _minimumRadius = 30;
-const double _tickStroke = 1;
+const double _tickStroke = 1.1;
 const _fontMultipler = 0.24;
 const _hourOffsetMultipler = 0.15;
 
@@ -25,9 +23,9 @@ class AnalogClock extends StatefulWidget {
     this.minuteHandColor,
     this.secondHandColor,
   }) : assert(
-          radius >= _minimumRadius,
-          'radius must be greater than or equal to 30px',
-        );
+         radius >= _minimumRadius,
+         'radius must be greater than or equal to 30px',
+       );
 
   final Color? borderColor;
   final Color? faceColor;
@@ -55,8 +53,9 @@ class _AnalogClock extends ObservingStatefulWidget<AnalogClock> {
     super.initState();
     utcMinuteOffset =
         widget.utcMinuteOffset ?? DateTime.now().timeZoneOffset.inMinutes;
-    initalDateTime =
-        DateTime.now().toUtc().add(Duration(hours: utcMinuteOffset));
+    initalDateTime = DateTime.now().toUtc().add(
+      Duration(hours: utcMinuteOffset),
+    );
   }
 
   @override
@@ -75,8 +74,9 @@ class _AnalogClock extends ObservingStatefulWidget<AnalogClock> {
       stream: Stream.periodic(const Duration(seconds: 1), (_) {
         return DateTime.now().toUtc().add(Duration(minutes: utcMinuteOffset));
       }),
-      initialData:
-          DateTime.now().toUtc().add(Duration(minutes: utcMinuteOffset)),
+      initialData: DateTime.now().toUtc().add(
+        Duration(minutes: utcMinuteOffset),
+      ),
       builder: (BuildContext context, AsyncSnapshot<DateTime> snapshot) {
         return Container(
           height: widget.radius * 2,
@@ -90,9 +90,10 @@ class _AnalogClock extends ObservingStatefulWidget<AnalogClock> {
             painter: _ClockPainter(
               dateTime: snapshot.data ?? initalDateTime,
               faceColor: faceColor,
-              tickColor: widget.radius < _defaultRadius
-                  ? Colors.transparent
-                  : borderColor,
+              tickColor:
+                  widget.radius < _defaultRadius
+                      ? Colors.transparent
+                      : borderColor,
               hourColor: hourColor,
               minuteColor: minuteColor,
               secondColor: secondColor,
