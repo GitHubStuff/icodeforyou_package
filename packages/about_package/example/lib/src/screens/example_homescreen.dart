@@ -17,7 +17,7 @@ class ExampleHomeScreen extends StatefulWidget {
 class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final c = context.read<BrightnessCubit>().state;
+    final c = AppThemeMode.system;
     return Scaffold(
       appBar: AppBar(
         actions: const [ThemeSelectionAppBarButton()],
