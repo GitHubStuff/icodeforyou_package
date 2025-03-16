@@ -2,6 +2,7 @@
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
 
 class ExampleHomeScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class ExampleHomeScreen extends StatefulWidget {
 class _MyHomeScreen extends ObservingStatefulWidget<ExampleHomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final c = context.read<BrightnessCubit>().state;
     return Scaffold(
       appBar: AppBar(
         actions: const [ThemeSelectionAppBarButton()],

@@ -28,8 +28,6 @@ dependencies:
     path: packages/nosql_flutter_package
   theme_flutter_package:
     path: packages/theme_flutter_package
-  theme_package:
-    path: packages/theme_package
 
 dev_dependencies:
   flutter_test:

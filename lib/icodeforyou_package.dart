@@ -9,4 +9,4 @@ export 'package:extensions_package/extensions_package.dart';
 export 'package:marquee/marquee.dart';
 export 'package:modal_dialog/modal_dialog.dart';
 export 'package:nosql_flutter_package/nosql_flutter_package.dart';
-export 'package:theme_package/theme_package.dart';
+export 'package:theme_flutter_package/theme_flutter_package.dart';
