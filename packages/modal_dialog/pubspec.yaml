@@ -1,0 +1,19 @@
+name: modal_dialog
+description: "A flutter widget that allows you to position a widget in the overlay stack."
+version: 1.0.0
+publish_to: none
+
+environment:
+  flutter: ">=3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.0.0
+  icodeforyou_package:
+    path: ../../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

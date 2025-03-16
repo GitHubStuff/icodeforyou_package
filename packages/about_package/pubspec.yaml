@@ -1,0 +1,30 @@
+name: about_package
+description: "Widget used for About page and Demos."
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=3.29.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  icodeforyou_package:
+    path: ../../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^7.0.0
+
+# Element of flutter_gen https://pub.dev/packages/flutter_gen/install
+# '% dart pub global activate flutter_gen'
+# '% fluttergen'
+flutter_gen:
+  line_length: 132
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

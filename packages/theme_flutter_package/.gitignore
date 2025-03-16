@@ -1,0 +1,136 @@
+# 21-Feb-2025
+# Content for Flutter/Dart, Android, Android Studio, IntelliJ IDEA, and VS Code projects
+# for MacOS, Linux, Windows, web, iOS, and Android.
+#
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
+flutter_*.yaml
+
+# Flutter Version Manager (FVM)
+.fvm/flutter_sdk
+
+# iOS / Xcode
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/.generated/
+**/ios/Flutter/Flutter.podspec
+**/ios/DerivedData/
+**/ios/xcodeproj/
+**/ios/xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.dSYM
+**/ios/**/GeneratedPluginRegistrant.*
+
+# Android
+**/android/.gradle/
+**/android/build/
+**/android/captures/
+**/android/gradlew*
+**/android/local.properties
+**/android/key.properties
+**/android/**/GeneratedPluginRegistrant.java
+*.apk
+*.ap_
+*.dex
+*.class
+
+# CocoaPods
+Pods/
+.build/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# macOS
+macos/Flutter/ephemeral/
+
+# Android Studio / IntelliJ IDEA / VS Code
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Keystore files (Add .jks files if needed)
+#*.jks
+
+# Gradle files
+.gradle/
+*.gradle
+**/gradle-wrapper.jar
+
+# Google Services (Firebase, etc.)
+google-services.json
+FirebaseConfig.plist
+*.gcloud
+*.firebase
+.google/
+
+# Miscellaneous
+.DS_Store
+*.lock
+*.log
+*.pyc
+*.swp
+.history
+.atom/
+.buildlog/
+
+# Generated JavaScript (if applicable)
+*.dart.js
+*.js.map
+
+# Coverage
+coverage/
+
+# Build-related
+bin/
+gen/
+out/
+proguard/
+
+# CI/CD Tool Files
+.github/
+.travis.yml
+.circleci/
+.jenkins/
+*.log
+*.out
+*.err
+
+# Docker related
+.docker/
+*.tar
+Dockerfile.*
+
+# Temporary files from build pipelines
+*.tar.gz
+*.zip
+
+# External Tools
+facebook_sdk/
+*.fbconfig
+.sentry/
+sentry-cli-config.json
+.stripe/
+.auth0/
+.aws/
+.slack/
+.bitbucket/
+
+# Apple Developer
+*.mobileprovision
+*.xcscheme
+*.xcuserstate

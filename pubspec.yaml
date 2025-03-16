@@ -1,0 +1,49 @@
+name: icodeforyou_package
+description: "A flutter package of widgets, extensions, and utilities for iCodeForYou apps."
+version: 0.0.3+2
+publish_to: none
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=3.29.2 <4.0.0"
+
+dependencies:
+  about_package:
+    path: packages/about_package
+  analog_clock:
+    path: packages/analog_clock
+  aqua_button:
+    path: packages/aqua_button
+  datetime_package:
+    path: packages/datetime_package
+  extensions_package:
+    path: packages/extensions_package
+  flutter:
+    sdk: flutter
+  marquee:
+    path: packages/marquee
+  modal_dialog:
+    path: packages/modal_dialog
+  nosql_flutter_package:
+    path: packages/nosql_flutter_package
+  theme_flutter_package:
+    path: packages/theme_flutter_package
+  theme_package:
+    path: packages/theme_package
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  melos: ^6.3.2
+  very_good_analysis: ^7.0.0
+
+# Element of flutter_gen https://pub.dev/packages/flutter_gen/install
+# '% dart pub global activate flutter_gen'
+# '% fluttergen'
+flutter_gen:
+  line_length: 132
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

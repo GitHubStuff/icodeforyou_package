@@ -1,0 +1,43 @@
+name: nosql_flutter_package
+description: "A NoSQL package for Flutter to abstract the underlying NoSQL database."
+version: 0.0.1
+homepage: https://github.com/GitHubStuff?tab=repositories&q=&type=&language=&sort=
+publish_to: "none"
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=3.29.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hive_ce: ^2.10.1
+  hive_ce_flutter: ^2.2.0
+
+  mockito: ^5.4.5
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  melos: ^6.3.2
+  path_provider_platform_interface: ^2.1.2
+  test: ^1.25.15
+  very_good_analysis: ^7.0.0
+
+# Element of flutter_gen https://pub.dev/packages/flutter_gen/install
+# The Flutter code generator for your assets, fonts, colors, … — Get rid of all String-based APIs.
+# From terminal
+#   % dart pub global activate flutter_gen
+#   % fluttergen
+flutter_gen:
+  line_length: 132
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+flutter:
+  uses-material-design: true
