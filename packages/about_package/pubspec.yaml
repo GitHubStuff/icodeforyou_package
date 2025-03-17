@@ -1,6 +1,6 @@
 name: about_package
 description: "Widget used for About page and Demos."
-version: 0.0.1
+version: 0.0.1+1
 publish_to: none
 
 environment:
@@ -26,5 +26,3 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/
