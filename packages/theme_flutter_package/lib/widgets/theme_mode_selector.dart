@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:theme_flutter_package/state/app_theme_mode.dart';
-import 'package:theme_flutter_package/theme_flutter_package.dart'
-    show BrightnessCubit;
+import 'package:icodeforyou_package/icodeforyou_package.dart';
 
 /// A widget that displays a column of three radio buttons for theme mode selection:
 /// 'Dark', 'Light', and 'System'. When a radio is selected, it calls the cubit's
@@ -19,7 +17,7 @@ class ThemeModeSelector extends StatelessWidget {
     return GestureDetector(
       onDoubleTap: () => Navigator.of(context).pop(),
       child: Container(
-        padding: const EdgeInsets.all(16),
+        //padding: const EdgeInsets.all(16),
         // Adjust constraints to suit modal, gear popover, or centered popover usage.
         constraints: const BoxConstraints(minWidth: 200, minHeight: 150),
         decoration: BoxDecoration(
@@ -63,7 +61,7 @@ class ThemeModeSelector extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ).withPaddingAll(16),
     );
   }
 }

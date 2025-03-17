@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart' show PlatformDispatcher;
 import 'package:flutter/material.dart' show Brightness;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
-import 'package:theme_flutter_package/state/app_theme_mode.dart'
-    show AppThemeMode;
 
 const String _brightnessKey = 'BrightnessCubit_box_name';
 

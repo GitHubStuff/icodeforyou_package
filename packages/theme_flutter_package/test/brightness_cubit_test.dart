@@ -5,11 +5,6 @@ import 'package:flutter/foundation.dart' show PlatformDispatcher;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:icodeforyou_package/icodeforyou_package.dart';
-import 'package:theme_flutter_package/state/app_theme_mode.dart';
-import 'package:theme_flutter_package/state/app_theme_mode.dart'
-    show AppThemeMode;
-import 'package:theme_flutter_package/theme_flutter_package.dart'
-    show BrightnessCubit;
 
 // Fake implementation for NoSqlBox<String>
 class FakeNoSqlBox implements NoSqlBox<String> {

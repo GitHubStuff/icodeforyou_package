@@ -28,7 +28,7 @@ scripts:
 
 # Other commands:
 #   bootstrap   Link local packages
-#   clean       Clean this workspace and all packages
+#   clean       Clean this workspace and all packages {melos bootstrap will be required after this}
 #   exec        Execute an arbitrary command in each package
 #   list        List local packages in various output formats
 #   --help      Show list of commands

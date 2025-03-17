@@ -41,10 +41,10 @@ The configuration for the icons in the **pubspec.yaml**
 From the IDE or terminal do the following
 
 ```zsh
-% dart run flutter_launcher_icons  #creates icons
-% flutter clean
-% flutter pub get
-% dart run build_runner build -d
+dart run flutter_launcher_icons  #creates icons
+flutter clean
+flutter pub get
+dart run build_runner build -d
 ```
 
 The `build_runner` will generate `lib/gen/assets.gen.dart`, this is part of [flutter_gen_runner](https://pub.dev/packages/flutter_gen_runner), the flutter code generator for assets/fonts/colors to get rid of String-based APIs. Search `flutter_gen_runner` for an example of it's use.
