@@ -1,6 +1,6 @@
 name: icodeforyou_package
 description: "A flutter package of widgets, extensions, and utilities for iCodeForYou apps."
-version: 0.0.3+2
+version: 0.0.3+3
 publish_to: none
 
 environment:
